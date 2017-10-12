@@ -84,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         requestPermissions();
+        mapFragment.getMapAsync(this);
 
         mRequestingLocationUpdates = true;
         mLastUpdateTime = "";
@@ -95,7 +96,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         createLocationRequest();
         buildLocationSettingsRequest();
 
-        mapFragment.getMapAsync(this);
     }
 
 
